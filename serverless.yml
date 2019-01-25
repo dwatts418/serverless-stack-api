@@ -1,4 +1,4 @@
-service: notes-app-3-api
+service: notes-app-4-api
 
 # Use the serverless-webpack plugin to transpile ES6
 plugins:
@@ -113,12 +113,12 @@ functions:
           cors: true
           authorizer: aws_iam
           
-  # Create our resources with separate CloudFormation templates
-  resources:
-    # DynamoDB
-    - ${file(resources/dynamodb-table.yml)}
-    # S3
-    - ${file(resources/s3-bucket.yml)}
-    # Cognito
-    - ${file(resources/cognito-user-pool.yml)}
-    - ${file(resources/cognito-identity-pool.yml)}
+# Create our resources with separate CloudFormation templates
+resources:
+  # DynamoDB
+  - ${file(resources/dynamodb-table.yml)}
+  # S3
+  - ${file(resources/s3-bucket.yml)}
+  # Cognito
+  - ${file(resources/cognito-user-pool.yml)}
+  - ${file(resources/cognito-identity-pool.yml)}
